@@ -56,11 +56,9 @@ export class TablePDF {
 
 	draw(cursor: Cursor) {
 		this.cursor = cursor;
+		this.PADDING = this.cursor.x;
 		let that = this;
 		let cellIndex = 0;
-		this.pdf.autoTable([], [], {
-			startY: 0
-		});
 		this.pdf.autoTable(this.columns, this.rows, {
 			startY: cursor.y,
 			theme: "grid",
